@@ -1,0 +1,52 @@
+.notify-detail {
+    position: absolute;
+    top: 52px;
+    right: -51px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    width: 360px;
+    color: #cccccc;
+    overflow: auto;
+    max-height: 92vh;
+    z-index: 0;
+    display: none;
+}
+
+.uti-item-active .notify-detail {
+    display: block;
+}
+
+
+.notify-detail::-webkit-scrollbar {
+    display: none;
+}
+
+.notify-item__img {
+    width: 56px;
+}
+
+.cover-img {
+    width: 56px;
+    height: 56px;
+}
+
+.relativeIcon {
+    width: 24px;
+    height: 24px;
+    bottom: -6px;
+    left: 35px;
+}
+
+.notify-toggle {
+    width: 32px;
+    height: 32px;
+}
+
+.notify-toggle:hover {
+    background-color: var(--hover-primary);
+    cursor: pointer;
+}
+
+.scrollbar-notify {
+    height: 92vh;
+}

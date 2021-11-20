@@ -1,0 +1,197 @@
+:root {
+    --primary-color: #242526;
+    --hover-primary: rgba(225, 225, 225, 0.15);
+    --text-color-pr: #e4e4e4;
+    --bg-body: #18191a;
+    --color-blue: #2e89ff;
+    --color-black-light: #242526fc;
+}
+
+.fs-title {
+    font-size: 18px;
+}
+
+// text-color
+.text-color-pr {
+    color: #e4e4e4;
+}
+
+.text-color-input {
+    color: #f3f3f3;
+}
+
+.text-color-read {
+    color: #bcbcbc;
+}
+
+.bg-blue-primary {
+    background: #2e89ff;;
+}
+
+.bg-symbol {
+    background-color: var(--hover-primary);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-body);
+}
+
+.navbar-cover {
+    height: 56px;
+    background-color: var(--color-black-light);
+    border-bottom: solid 0.5px rgba(147, 150, 155, 0.342);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* scrollbar */
+.scrollbar-create {
+    width: 100%;
+}
+
+.scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: -1;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border: 4px transparent solid;
+    box-sizing: border-box;
+    background-color: rgba(225, 225, 225, 0.4);
+    background-clip: content-box;
+    border-radius: 8px;
+}
+
+// hovering will create three dot
+.div-button-more {
+    position: absolute;
+    right: 26px;
+    top: 0;
+    bottom: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+}
+
+.button-more {
+    width: 36px;
+    height: 36px;
+    background-color: #404040;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.button-more-icon {
+    font-size: 20px;
+    color: #a4a7ac;
+}
+
+// hover element
+.element-hover {
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    .element-hover--margin {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 8px;
+        .element-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 0;
+            width: 100%;
+            color: var(--text-color-pr);
+        }
+        .div-cover {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            width: 100%;
+            color: var(--text-color-pr);
+        }
+    }
+}
+
+// dấu chưa đọc
+.state-ever-read {
+    color: #2e89ff;
+}
+
+// button khi hover
+.btn-face-primary:hover {
+    background-color: var(--hover-primary);
+}
+
+// symbol - biểu tượng
+.cover-symbol {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--hover-primary);
+    border-radius: 50%;
+}
+// Dòng ngăn cách giữ có khối
+.line-seperate {
+    height: 1px;
+    background-color: #cccccc5d;
+    margin: 0 16px 0 16px;
+}
+
+// css cho element user
+.avatar-img {
+    width: 40px;
+}
+
+.cover-img-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cover-img-square {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// set color cho borderstory
+.border-story-out {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+}
+
+.border-story-in {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: solid var(--bg-body) 3px;
+}

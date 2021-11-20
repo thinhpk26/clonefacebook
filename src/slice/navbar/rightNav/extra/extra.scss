@@ -1,0 +1,25 @@
+.extra-detail {
+    top: 52px;
+    right: -1px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    width: 360px;
+    color: #cccccc;
+    overflow: auto;
+    max-height: 92vh;
+    z-index: 0;
+    display: none;
+}
+
+.uti-item-active .extra-detail {
+    display: block;
+}
+
+.img-user {
+    width: 72px;
+    height: 72px;
+}
+
+.extra-iconend {
+    font-size: 28px;
+}

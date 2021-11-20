@@ -1,0 +1,196 @@
+.menu-cover {
+    position: absolute;
+    top: 53px;
+    right: -150px;
+    width: 608px;
+    background-color: #323436;
+    color: #dedede;
+    border-radius: 8px;
+    display: none;
+}
+
+.menu-margin {
+    margin: 16px 0 0 16px;
+}
+
+.menu-main {
+    position: relative;
+    margin-top: 20px;
+    max-height: 82vh;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.menu-main::-webkit-scrollbar {
+    width: 18px;
+}
+
+.menu-main::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.menu-main::-webkit-scrollbar-thumb {
+    border: 4px transparent solid;
+    box-sizing: border-box;
+    background-color: rgba(225, 225, 225, 0.4);
+    background-clip: content-box;
+    border-radius: 8px;
+}
+
+.menu-left {
+    width: 360px;
+    background-color: #242526;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    float: left;
+}
+
+.menu-head {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.menu-left--margin {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-search {
+    height: 36px;
+    width: 328px;
+    border-radius: 18px;
+    background-color: #3a3b3c;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+.menu-icon-search {
+    font-size: 19px;
+    margin-left: 11px;
+}
+
+.menu-input {
+    background: #3a3b3c;
+    border: none;
+    color: #dedede;
+    margin-left: 3px;
+    font-size: 17px;
+    flex: 1;
+}
+
+.menu-input:focus {
+    outline: none;
+}
+
+.menu-input::placeholder {
+    color: #a4a7ac;
+}
+
+.unti-name {
+    padding: 20px 0;
+}
+
+.unti-name + .unti-name {
+    border-top: solid rgba(225, 225, 225, 0.1) 1px;
+}
+
+.unti-name > h2 {
+    margin: 0;
+    font-size: 17.5px;
+}
+
+.unti-content {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.unti-content:hover {
+    background-color: rgba(225, 225, 225, 0.15);
+}
+
+.unties-cover {
+    margin: 8px 0;
+}
+
+.menu-unti-icon {
+    font-size: 33px;
+}
+
+.unti-content-title {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+}
+
+.menu-unti-icon {
+    margin-left: 10px;
+}
+
+.unti-cover-des-content {
+    margin: 0 8px 0 14px;
+}
+
+.unti-content-des {
+    width: 100%;
+    color: #bdbdbd;
+}
+
+.menu-right {
+    width: 200px;
+    background-color: #242526;
+    border-radius: 8px;
+    float: left;
+    margin-left: 14px;
+    overflow: hidden;
+}
+
+.menu-right-head {
+    font-size: 21px;
+    font-weight: 900;
+    margin: 16px;
+}
+
+.menu-right-main-margin {
+    padding: 8px 0;
+    margin: 0 8px;
+}
+
+.menu-right-main-margin:first-child {
+    border-bottom: 1px solid rgba(225, 225, 225, 0.1);
+}
+
+li.main-uti-right {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 4px;
+}
+
+.main-uti-right:hover {
+    background-color: rgba(225, 225, 225, 0.15);
+}
+
+.icon--hover {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(225, 225, 225, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span.main-uti-right-des {
+    margin-left: 8px;
+    font-weight: 600;
+    flex: 1;
+}

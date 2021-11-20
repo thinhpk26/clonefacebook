@@ -1,0 +1,58 @@
+.home-body-left {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    width: 360px;
+    color: #cccccc;
+    overflow: auto;
+    max-height: 93.25vh;
+    z-index: 0;
+    padding-top: 16px;
+}
+
+.home-body-left::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-homeleft {
+    height: 93.25vh;
+}
+
+// 
+.symbol-icon-home-left {
+    font-size: 34px;
+}
+
+.cover-symbol-no-rounded {
+    margin-right: 8px;
+}
+
+.body-left-narrow {
+    display: block;
+}
+
+.body-left-ex {
+    display: none;
+}
+
+.extra > .body-left-narrow {
+    display: none;
+}
+
+.extra > .body-left-ex {
+    display: block;
+}
+
+.shortcuts-list:hover .btn-edit-shortcut {
+    display: block;
+}
+
+.btn-edit-shortcut {
+    color: var(--color-blue);
+    display: none;
+}
+
+.btn-edit-shortcut:hover {
+    background-color: var(--hover-primary);
+    color: var(--color-blue);
+}

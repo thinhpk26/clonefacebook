@@ -1,0 +1,77 @@
+/* nav left */
+@keyframes appearBackInput {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-8px);
+    }
+}
+
+@keyframes paddinginput {
+    from {
+        padding-left: 4px;
+    }
+    to {
+        padding-left: 16px;
+    }
+}
+
+@keyframes opacityElementface {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes opacityElement {
+    from {
+        opacity: 0.5;
+        width: 20px;
+        margin-left: 8px;
+    }
+    to {
+        opacity: 0;
+        width: 0;
+        margin-left: 0;
+    }
+}
+
+@keyframes creWidthBox {
+    to {
+        width: 320px;
+    }
+}
+
+@keyframes historyAnimation {
+    from {
+        height: 56px;
+    }
+    to {
+        height: auto;
+    }
+}
+
+@keyframes disappearIconSearch {
+    from {
+        width: 20px;
+        opacity: 1;
+    }
+    to {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes backinputmes {
+    from {
+        width: 0;
+    }
+    to {
+        width: 36px;
+    }
+}
