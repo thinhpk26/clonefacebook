@@ -1,0 +1,37 @@
+// element user
+.avatar-img {
+    width: 40px;
+}
+
+.cover-img-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cover-img-square {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// set color cho border của từng user nếu có story
+.border-story-out {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+}
+
+.border-story-in {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: solid var(--bg-body) 3px;
+}
+
+.target-border {
+    border-radius: 8px;
+    overflow: hidden;
+}

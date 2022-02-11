@@ -1,0 +1,14 @@
+@import './navright/all-nav-right';
+@import './navleft/all-nav-left';
+@import './navcenter/all-nav-center';
+
+.navbar-cover {
+    height: 56px;
+    background-color: var(--color-black-light);
+    border-bottom: solid 0.5px rgba(147, 150, 155, 0.342);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}

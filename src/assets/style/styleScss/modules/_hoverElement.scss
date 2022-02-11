@@ -1,0 +1,28 @@
+.element-hover {
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    .element-hover--margin {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 8px;
+        .element-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 0;
+            width: 100%;
+            color: var(--text-color-pr);
+        }
+        .div-cover {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            width: 100%;
+            color: var(--text-color-pr);
+        }
+    }
+}

@@ -24,6 +24,10 @@
     color: #bcbcbc;
 }
 
+.bg-no-touch {
+    background-color: #3f3f3f;
+}
+
 .bg-blue-primary {
     background: #2e89ff;;
 }
@@ -32,9 +36,18 @@
     background-color: var(--hover-primary);
 }
 
+.fb-border-radius {
+    border-radius: 8px;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-body);
+    letter-spacing: 0.5px;
 }
 
 .navbar-cover {
@@ -45,41 +58,30 @@ body {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 /* scrollbar */
-.scrollbar-create {
-    width: 100%;
-}
-
 .scrollbar {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: auto;
-    z-index: -1;
-}
-
-.scrollbar::-webkit-scrollbar {
     width: 16px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: flex;
     background-color: transparent;
+    border-radius: 10px;
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
-    border: 4px transparent solid;
-    box-sizing: border-box;
-    background-color: rgba(225, 225, 225, 0.4);
-    background-clip: content-box;
-    border-radius: 8px;
+.scrollbar-create {
+    position: absolute;
+    top: 4px;
+    left: 3.5px;
+    width: 8px;
+    border-radius: 6px;
 }
 
-// hovering will create three dot
+// hovering will create three dot-------------------------------------------------------------------------------------------------
 .div-button-more {
     position: absolute;
     right: 26px;
@@ -148,15 +150,14 @@ body {
 
 // symbol - biểu tượng
 .cover-symbol {
-    width: 36px;
-    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--hover-primary);
     border-radius: 50%;
 }
-// Dòng ngăn cách giữ có khối
+
+// Dòng ngăn cách giữa các khối
 .line-seperate {
     height: 1px;
     background-color: #cccccc5d;
@@ -182,7 +183,7 @@ body {
     overflow: hidden;
 }
 
-// set color cho borderstory
+// set color cho border của từng user nếu có story
 .border-story-out {
     width: 37px;
     height: 37px;
@@ -194,4 +195,83 @@ body {
     height: 34px;
     border-radius: 50%;
     border: solid var(--bg-body) 3px;
+}
+
+.target-border {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// ngăn người dùng select
+.stop-select {
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select: none;
+}
+
+.allow-select {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+// set style cho chú thích khi hover element
+.noted {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: auto;
+    padding: 10px 10px;
+    min-width: 32px;
+    border-radius: 8px;
+    background-color: rgba(225, 225, 225, 0.9);
+    z-index: 10;
+    color: #222;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    white-space: nowrap;
+}
+
+span.centernote-8 {
+    top: calc(100% + 8px);
+}
+
+span.upnote-8 {
+    bottom: calc(100% + 8px);
+}
+
+span.upnote-4 {
+    bottom: calc(100% + 4px);
+}
+
+span.centernote-4 {
+    top: calc(100% + 4px);
+}
+
+.noting > .noted {
+    display: flex;
+}
+
+// css cho thẻ đóng 
+.close-box {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(225, 225, 225, 0.1);
+    font-size: 24px;
+    color: var(--text-color-pr);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-box:hover {
+    background-color: rgba(225, 225, 225, 0.3);
 }

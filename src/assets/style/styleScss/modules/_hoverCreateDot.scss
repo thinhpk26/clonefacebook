@@ -1,0 +1,26 @@
+//hovering will create three dot
+.div-button-more {
+    position: absolute;
+    right: 26px;
+    top: 0;
+    bottom: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+}
+
+.button-more {
+    width: 36px;
+    height: 36px;
+    background-color: #404040;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.button-more-icon {
+    font-size: 20px;
+    color: #a4a7ac;
+}

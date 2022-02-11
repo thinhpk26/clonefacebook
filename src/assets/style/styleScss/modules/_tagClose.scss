@@ -1,0 +1,17 @@
+// css cho thẻ đóng 
+.close-box {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(225, 225, 225, 0.1);
+    font-size: 24px;
+    color: var(--text-color-pr);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-box:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+}

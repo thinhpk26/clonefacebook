@@ -1,0 +1,65 @@
+@import './extra';
+@import './menu';
+@import './messages';
+@import './notify';
+
+.rightnav {
+    width: 360px;
+    height: 100%;
+}
+
+.personal-uti-list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: right;
+}
+
+.personal-uti-item {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.personal-uti-item.uti-item-active > .personal-uti-item--hover {
+    background-color: #263951;
+}
+
+.personal-uti-item.uti-item-active .personal {
+    color: #2d83f8;
+}
+
+.personal-uti-item.menu.uti-item-active .menu-cover {
+    display: block;
+} 
+
+.personal-uti-item--hover {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-color: rgba(225, 225, 225, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.personal-uti-item--hover:hover {
+    background-color: rgba(225, 225, 225, 0.2);
+}
+
+.personal {
+    font-size: 23px;
+    color: #fff;
+}
+
+// set màu cho symbol
+.symbol-icon {
+    font-size: 24px;
+    color: var(--text-color-pr);
+}

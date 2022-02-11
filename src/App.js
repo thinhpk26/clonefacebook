@@ -1,12 +1,13 @@
 import React from'react'
-import Navbar from './slice/navbar/Navbar.js'
+import Navbar from './features/navbar/Navbar.js'
 import store from './app/store'
 import { Provider } from 'react-redux'
+import './assets/style/styleCss/grid.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Home from './slice/home/Home.js';
+import Home from './features/home/Home.js';
 import { useEffect } from 'react';
-import { hoverElement, hoverUti, disOrAppearScroll, elementScroll } from './functionGenaral.js';
+import { hoverElement, hoverUti} from './assets/genaral/functionGenaral';
 
 
 const Appface = () => {
@@ -24,20 +25,107 @@ const Appface = () => {
       element.addEventListener('mouseenter', hoverElementItem)
       if(buttonMore) {
         buttonMore.addEventListener('mouseleave', hoverOutButtonMore)
-        buttonMore.addEventListener('mouseenter', hoverButtonMore)
+        buttonMore.addEventListener('mousemove', hoverButtonMore)
       }
     })
+    // hover 0.5s để hiện chú thích
     root.querySelectorAll('.appear-name-uti').forEach(element => {
       element.addEventListener('mouseenter', hoverUti(element))
     })
-    root.querySelectorAll('.container-scroll').forEach(element => {
-      const dragScrollAppear = elementScroll(element, '.scrollbar', [336, 358])
-      const appearScroll = disOrAppearScroll(element).appearScroll
-      const disAppearScroll = disOrAppearScroll(element).disAppearScroll
-      //  onMouseOver={appearScroll} onMouseOut={disAppearScroll} onMouseMove={dragScrollAppear}
-      element.addEventListener('mouseover', appearScroll)
-      element.addEventListener('mouseout', disAppearScroll)
-      element.addEventListener('mousemove', dragScrollAppear)
+    // scroll bar
+    const containerScroll = root.querySelectorAll('.container-scroll')
+    containerScroll.forEach(element => {
+      const elementToCalcHeight = element.querySelector('.duty-calc-height-scroll')
+      const scrollBar = element.querySelector('.scrollbar')
+      const scrollBarThumb = element.querySelector('.scrollbar-create')
+      element.addEventListener('mouseenter', () => {
+        scrollBar.style.backgroundColor = 'transparent'
+        scrollBarThumb.style.backgroundColor = 'rgba(225, 225, 225, 0.3)'
+        scrollBarThumb.style.display = 'block'
+        const heightOfscrollbarThumb = Math.pow(scrollBar.offsetHeight - 16, 2) / elementToCalcHeight.offsetHeight
+        scrollBarThumb.style.height = heightOfscrollbarThumb + 'px'
+      })
+      scrollBar.addEventListener('mouseenter', () => {
+        scrollBar.style.backgroundColor = 'rgba(225, 225, 225, 0.05)'
+      })
+      scrollBar.addEventListener('mouseleave', () => {
+        scrollBar.style.backgroundColor = 'transparent'
+      })
+      const heightOfscrollbarThumb = Math.pow(scrollBar.offsetHeight - 16, 2) / elementToCalcHeight.offsetHeight
+      const spaceLeaveScrollBar = scrollBar.offsetHeight - heightOfscrollbarThumb
+      scrollBarThumb.addEventListener('mousedown', (e) => {
+          element.addEventListener('mouseleave', () => {
+            scrollBarThumb.style.display = 'block'
+          })
+          scrollBarThumb.style.backgroundColor = 'rgba(225, 225, 225, 0.5)'
+          const coordMouseDown = e.pageY
+          root.addEventListener('mousemove', moveScrollBar)
+          root.addEventListener('mouseup', () => {
+              element.addEventListener('mouseleave', () => {
+                scrollBarThumb.style.display = 'none'
+              })
+              scrollBarThumb.style.backgroundColor = 'rgba(225, 225, 225, 0.3)'
+              root.removeEventListener('mousemove', moveScrollBar)
+          })
+          const heightOfscrollbarThumb = Math.pow(scrollBar.offsetHeight - 16, 2) / elementToCalcHeight.offsetHeight
+          const spaceLeaveScrollBar = scrollBar.offsetHeight - heightOfscrollbarThumb
+          const oldScrollBarTop = scrollBarThumb.offsetTop
+          function moveScrollBar(event) {
+              const clientMouseY = event.pageY;
+              if(scrollBarThumb.offsetTop >= 4 && scrollBarThumb.offsetTop <= spaceLeaveScrollBar) {
+                  const ratio = elementToCalcHeight.offsetHeight / scrollBar.offsetHeight
+                  if(clientMouseY - coordMouseDown >= 4) {
+                      scrollBarThumb.style.top = oldScrollBarTop + (clientMouseY - coordMouseDown) + 'px'
+                      element.scrollTop = scrollBarThumb.offsetTop * ratio
+                  } else if(clientMouseY - coordMouseDown < -4) {
+                      scrollBarThumb.style.top = oldScrollBarTop - (coordMouseDown - clientMouseY) + 'px'
+                      element.scrollTop = scrollBarThumb.offsetTop * ratio
+                  }
+                  if(scrollBarThumb.offsetTop < 4) scrollBarThumb.style.top = '4px'
+                  if(scrollBarThumb.offsetTop > spaceLeaveScrollBar) scrollBarThumb.style.top = spaceLeaveScrollBar - 4 +'px'
+              }
+          } 
+      })
+      element.addEventListener('scroll', (e) => {
+          const scrollTop = e.target.scrollTop
+          scrollBar.style.top = scrollTop + 'px'
+          const ratio = elementToCalcHeight.offsetHeight / scrollBar.offsetHeight
+          scrollBarThumb.style.top = e.target.scrollTop / ratio + 'px'
+          if(scrollBarThumb.offsetTop < 4) scrollBarThumb.style.top = '4px'
+          if(scrollBarThumb.offsetTop > spaceLeaveScrollBar) scrollBarThumb.style.top = spaceLeaveScrollBar - 4 +'px'
+      })
+      scrollBar.addEventListener('mousedown', (e) => {
+        if(e.target.matches('.scrollbar')) {
+            const clientY = e.clientY - 58
+            if(clientY > scrollBarThumb.offsetTop) {
+                const scrollingThumb = setInterval(() => {
+                    const ratio = elementToCalcHeight.offsetHeight / scrollBar.offsetHeight
+                    scrollBarThumb.style.top = scrollBarThumb.offsetTop + 1 + 'px'
+                    element.scrollTop = scrollBarThumb.offsetTop * ratio
+
+                }, 5)
+                scrollBar.addEventListener('mouseup', () => {
+                    clearInterval(scrollingThumb)
+                })
+                scrollBar.addEventListener('mouseleave', () => {
+                    clearInterval(scrollingThumb)
+                })
+            } else {
+                const scrollingThumb = setInterval(() => {
+                    const ratio = elementToCalcHeight.offsetHeight / scrollBar.offsetHeight
+                    scrollBarThumb.style.top = scrollBarThumb.offsetTop - 1 + 'px'
+                    element.scrollTop = scrollBarThumb.offsetTop * ratio
+
+                }, 5)
+                scrollBar.addEventListener('mouseup', () => {
+                    clearInterval(scrollingThumb)
+                })
+                scrollBar.addEventListener('mouseleave', () => {
+                    clearInterval(scrollingThumb)
+                })
+            }
+        }
+      })
     })
   })
 

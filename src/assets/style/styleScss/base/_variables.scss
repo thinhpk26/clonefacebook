@@ -1,0 +1,72 @@
+:root {
+    --primary-color: #242526;
+    --hover-primary: rgba(225, 225, 225, 0.15);
+    --text-color-pr: #e4e4e4;
+    --bg-body: #18191a;
+    --color-blue: #2e89ff;
+    --color-black-light: #242526fc;
+}
+
+.fs-title {
+    font-size: 18px;
+}
+
+// text-color
+.text-color-pr {
+    color: #e4e4e4;
+}
+
+.text-color-input {
+    color: #f3f3f3;
+}
+
+.text-color-read {
+    color: #bcbcbc;
+}
+
+.bg-no-touch {
+    background-color: #3f3f3f;
+}
+
+.bg-blue-primary {
+    background: #2e89ff;;
+}
+
+.bg-symbol {
+    background-color: var(--hover-primary);
+}
+
+.fb-border-radius {
+    border-radius: 8px;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+// dấu chưa đọc
+.state-ever-read {
+    color: #2e89ff;
+}
+
+// button khi hover
+.btn-face-primary:hover {
+    background-color: var(--hover-primary);
+}
+
+// ngăn người dùng select
+.stop-select {
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select: none;
+}
+
+.allow-select {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
